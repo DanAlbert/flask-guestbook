@@ -1,0 +1,16 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} - Post{% endblock %}
+
+{% block content %}
+	<form action="{{ action_url }}" method="POST">
+		<dl>
+			{{ form.csrf_token }}
+			{{ render_field(form.subject) }}
+			{{ render_field(form.author) }}
+			{{ render_field(form.content) }}
+		</dl>
+		<input type="submit" value="Post" />
+	</form>
+{% endblock %}

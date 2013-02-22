@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}Flask Guestbook{% endblock %}</title>
+	</head>
+	<body>
+		{# display flashed messages (if any) #}
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul>
+				{% for message in messsages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		<div id="content">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

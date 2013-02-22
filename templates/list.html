@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} - Messages{% endblock %}
+{% block content %}
+	<a href="{{ post_url }}">Post a message,</a>
+	{% if messages %}
+		{% for message in messages %}
+			<article>
+				<h2>{{ message.subject }}</h2>
+				<h3>from {{ message.author }} on {{ message.date }}</h3>
+				<p>
+					{{ message.contents }}
+				</p>
+			</article>
+		{% endfor %}
+	{% else %}
+		<p>The are no messages here.<p>
+	{% endif %}
+{% endblock %}
