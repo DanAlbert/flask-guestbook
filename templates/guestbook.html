@@ -2,7 +2,7 @@
 
 {% block title %}{{ super() }} - Messages{% endblock %}
 {% block content %}
-	<a href="{{ post_url }}">Post a message,</a>
+	<a href="{{ post_url }}">Post a message</a>
 	{% if messages %}
 		{% for message in messages %}
 			<article>
